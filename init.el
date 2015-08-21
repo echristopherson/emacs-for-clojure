@@ -130,3 +130,6 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+
+;; grep-find custom executable(s) [EAC]
+(load "grep-find.el")

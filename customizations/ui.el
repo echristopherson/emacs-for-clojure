@@ -4,16 +4,15 @@
 ;; a matter of preference and may require some fiddling to match your
 ;; preferences
 
-;; Turn off the menu bar at the top of each frame because it's distracting
-(menu-bar-mode -1)
+;; Keep menu bar turned on [EAC]
+(menu-bar-mode +1)
 
 ;; Show line numbers
 (global-linum-mode)
 
-;; You can uncomment this to remove the graphical toolbar at the top. After
-;; awhile, you won't need the toolbar.
-;; (when (fboundp 'tool-bar-mode)
-;;   (tool-bar-mode -1))
+;; Disable tool bar [EAC]
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
 
 ;; Don't show native OS scroll bars for buffers because they're redundant
 (when (fboundp 'scroll-bar-mode)
@@ -28,8 +27,9 @@
 (add-to-list 'load-path "~/.emacs.d/themes")
 (load-theme 'tomorrow-night-bright t)
 
-;; increase font size for better readability
-(set-face-attribute 'default nil :height 140)
+;; Set less-huge font size [EAC]
+;; Set font other than ugly Courier New [EAC]
+(set-face-attribute 'default nil :height 110 :family "Consolas")
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
