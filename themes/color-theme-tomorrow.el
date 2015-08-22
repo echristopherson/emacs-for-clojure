@@ -301,7 +301,10 @@ names to which it refers are bound."
      ;; Magit (a patch is pending in magit to make these standard upstream)
      (magit-branch ((,class (:foreground ,green))))
      (magit-header ((,class (:inherit nil :weight bold))))
-     (magit-item-highlight ((,class (:inherit highlight :background nil))))
+     ;; The default setting here causes a too-bright/low-contrast
+     ;; background when I put my cursor in a magit-diff chunk, so I've
+     ;; removed it. [EAC]
+     ;; (magit-item-highlight ((,class (:inherit highlight :background nil))))
      (magit-log-graph ((,class (:foreground ,comment))))
      (magit-log-sha1 ((,class (:foreground ,purple))))
      (magit-log-head-label-bisect-bad ((,class (:foreground ,red))))
