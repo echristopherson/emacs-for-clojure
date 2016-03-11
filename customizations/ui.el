@@ -28,8 +28,10 @@
 (load-theme 'tomorrow-night-bright t)
 
 ;; Set less-huge font size [EAC]
-;; Set font other than ugly Courier New [EAC]
-(set-face-attribute 'default nil :height 110 :family "Consolas")
+;; Set font other than ugly Courier New in Windows [EAC]
+(if (eq system-type 'windows-nt)
+      (set-face-attribute 'default nil :height 110 :family "Consolas")
+    (set-face-attribute 'default nil :height 120 :family "Menlo"))
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
