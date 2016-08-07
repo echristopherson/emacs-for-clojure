@@ -2,6 +2,9 @@
 ;; Clojure
 ;;;;
 
+;; Enable rainbow delimiters for Clojure
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode-enable)
+
 ;; Enable paredit for Clojure
 (add-hook 'clojure-mode-hook 'enable-paredit-mode)
 
