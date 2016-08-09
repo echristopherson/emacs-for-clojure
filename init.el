@@ -16,6 +16,11 @@
 ;;                          ("melpa" . "http://melpa-stable.milkbox.net/packages/")))
 
 
+;; Don't use unstable CIDER; it complains about cider-nrepl having the wrong
+;; version (nil).
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
 ;; Load and activate emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
 ;; This also sets the load path.
