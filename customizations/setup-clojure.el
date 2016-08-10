@@ -12,6 +12,9 @@
 ;; Java classes (e.g. JavaClassName)
 (add-hook 'clojure-mode-hook 'subword-mode)
 
+;; Enable integration of Figwheel with Emacs; NOTE: does not use CIDER!
+(add-hook 'clojure-mode-hook #'inf-clojure-minor-mode)
+
 ;; A little more syntax highlighting
 (require 'clojure-mode-extra-font-locking)
 

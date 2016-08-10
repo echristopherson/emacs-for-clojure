@@ -73,7 +73,10 @@
     tagedit
 
     ;; git integration
-    magit))
+    magit
+
+    ;; for integration of Figwheel with Emacs; NOTE: does not use CIDER!
+    inf-clojure))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
