@@ -12,8 +12,11 @@
 ;; Java classes (e.g. JavaClassName)
 (add-hook 'clojure-mode-hook 'subword-mode)
 
-;; Enable integration of Figwheel with Emacs; NOTE: does not use CIDER!
-(add-hook 'clojure-mode-hook #'inf-clojure-minor-mode)
+;; Removed because it conflicts with CIDER in cases when we want to
+;; use that. Instead, use M-x inf-clojure-minor-mode when desired.
+;; Enable integration of Figwheel with Emacs; NOTE: does not use
+;; CIDER!
+;(add-hook 'clojure-mode-hook #'inf-clojure-minor-mode)
 
 ;; A little more syntax highlighting
 (require 'clojure-mode-extra-font-locking)
@@ -86,3 +89,8 @@
      (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
      (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
      (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)))
+
+(defun figwheel-repl ()
+  "Start a Figwheel Clojurescript REPL using inf-clojure."
+  (interactive)
+  (run-clojure "lein figwheel"))
