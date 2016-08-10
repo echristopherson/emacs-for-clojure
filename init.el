@@ -20,6 +20,8 @@
 ;; version (nil).
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(setq package-pinned-packages
+      '((cider . "melpa-stable")))
 
 ;; Load and activate emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
