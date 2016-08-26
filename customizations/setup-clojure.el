@@ -94,3 +94,40 @@
   "Start a Figwheel Clojurescript REPL using inf-clojure."
   (interactive)
   (run-clojure "lein figwheel"))
+
+(defun define-paredit-terminal-keys ()
+  "Create some terminal-friendly paredit bindings"
+
+  (define-key paredit-mode-map (kbd "C-c [ ]") 'paredit-forward-slurp-sexp)
+  (define-key paredit-mode-map (kbd "C-c [ [")  'paredit-forward-barf-sexp)
+  (define-key paredit-mode-map (kbd "C-c [ M-]") 'paredit-backward-slurp-sexp)
+  (define-key paredit-mode-map (kbd "C-c [ M-[")  'paredit-backward-barf-sexp))
+
+(defun define-paredit-general-keys ()
+  "Create some generally-useful paredit bindings"
+
+  (define-key paredit-mode-map (kbd "{") 'paredit-open-curly)
+  (define-key paredit-mode-map (kbd "}") 'paredit-close-curly)
+
+  ;; Initially I wanted to have M-[ and M-{ to parallel M-(, and M-]
+  ;; and M-} to parallel M-). But the former falls apart because M-[
+  ;; is the prefix for things like <Home>; and the former and latter
+  ;; fall apart because M-{/M-} are built-in things for navigating
+  ;; paragraphs. So we can use terminal-like sequences instead (and
+  ;; throw in corresponding ones for round parentheses too).
+  ;; (define-key paredit-mode-map (kbd "C-c [ w (") 'paredit-wrap-round)
+  ;; (define-key paredit-mode-map (kbd "C-c [ w [") 'paredit-wrap-square)
+  ;; (define-key paredit-mode-map (kbd "C-c [ w {") 'paredit-wrap-curly)
+
+  ;; ;; Really, with these, we can just use M-)
+  ;; ;; (paredit-close-round-and-newline) and it will use the right kind
+  ;; ;; of delimiter for whatever structure point is in, so these are
+  ;; ;; unnecessary.
+  ;; (define-key paredit-mode-map (kbd "C-c [ c )") 'paredit-close-round-and-newline)
+  ;; (define-key paredit-mode-map (kbd "C-c [ c ]") 'paredit-close-square-and-newline)
+  ;; (define-key paredit-mode-map (kbd "C-c [ c }") 'paredit-close-curly-and-newline)
+  )
+
+(eval-after-load 'paredit
+  '(progn (define-paredit-general-keys)
+          (define-paredit-terminal-keys)))
