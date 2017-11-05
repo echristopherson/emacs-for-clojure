@@ -152,6 +152,9 @@
 ;; grep-find custom executable(s) [EAC]
 (load "grep-find.el")
 
+;; Start Emacs server [EAC]
+(load "server-start.el")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -160,7 +163,7 @@
  '(coffee-tab-width 2)
  '(package-selected-packages
    (quote
-    (tagedit smex rainbow-delimiters projectile paredit magit inf-clojure ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojure-mode-extra-font-locking cider))))
+    (mac-pseudo-daemon tagedit smex rainbow-delimiters projectile paredit magit inf-clojure ido-ubiquitous git-rebase-mode git-commit-mode exec-path-from-shell clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
