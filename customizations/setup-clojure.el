@@ -100,8 +100,8 @@
 
   (define-key paredit-mode-map (kbd "C-c [ ]") 'paredit-forward-slurp-sexp)
   (define-key paredit-mode-map (kbd "C-c [ [")  'paredit-forward-barf-sexp)
-  (define-key paredit-mode-map (kbd "C-c [ M-]") 'paredit-backward-slurp-sexp)
-  (define-key paredit-mode-map (kbd "C-c [ M-[")  'paredit-backward-barf-sexp))
+  (define-key paredit-mode-map (kbd "C-c [ M-[") 'paredit-backward-slurp-sexp)
+  (define-key paredit-mode-map (kbd "C-c [ M-]")  'paredit-backward-barf-sexp))
 
 (defun define-paredit-general-keys ()
   "Create some generally-useful paredit bindings"
