@@ -115,6 +115,7 @@
   ;; fall apart because M-{/M-} are built-in things for navigating
   ;; paragraphs. So we can use terminal-like sequences instead (and
   ;; throw in corresponding ones for round parentheses too).
+  ;; Update: Actually, we can just use a prefix of 1 and then hit (, [, {!
   ;; (define-key paredit-mode-map (kbd "C-c [ w (") 'paredit-wrap-round)
   ;; (define-key paredit-mode-map (kbd "C-c [ w [") 'paredit-wrap-square)
   ;; (define-key paredit-mode-map (kbd "C-c [ w {") 'paredit-wrap-curly)
